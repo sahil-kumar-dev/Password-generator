@@ -58,6 +58,7 @@ function generate() {
     while (newArr.length > 0) {
         newArr.pop();
     }
+    createRipple(event);
 }
 
 
@@ -67,3 +68,28 @@ function copy() {
     navigator.clipboard.writeText(value);
     value == '' ? alert('Please generate password') : alert('Password copied to clipboard');
 }
+
+
+
+
+function createRipple(event) {
+    const button = event.currentTarget;
+    const ripple = document.createElement("span");
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+
+    ripple.classList.add("ripple");
+
+    const ripples = button.getElementsByClassName("ripple");
+    if (ripples.length > 0) {
+      button.removeChild(ripples[0]);
+    }
+
+    button.appendChild(ripple);
+  }
