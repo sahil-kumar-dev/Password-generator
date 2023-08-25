@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_1280.jpg) center center/cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    backdrop-filter: blur(5px);
+    font-family: 'Yatra One';
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffffff;
+    box-shadow: 0 0 10px white;
+    border-radius: 10px;
+}
+
+.heading h2 {
+    font-family: 'Rubik Iso', cursive;
+    font-size: 1.6rem;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+.btn{
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1.5px solid white;
+    padding: 5px 4px;
+    border-radius: 4px;
+    font-family: 'Rubik Iso';
+    position: relative;
+}
+
+.generate{
+    display: flex;
+    margin: 15px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-larger{
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    padding: 5px 10px;
+}
+
+.btn:hover{
+    box-shadow: 0 0 10px white;
+    transform: scale(1.05);
+}
+
+.answer{
+    margin: 15px 0;
+    width: 100%;
+}
+
+#result{
+    font-family: 'Yatra One';
+    background-color: transparent;
+    width: 90%;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    padding: 2px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+#result:focus{
+    outline: none;
+}
