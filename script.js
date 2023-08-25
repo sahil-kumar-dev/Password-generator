@@ -44,15 +44,18 @@ function newData() {
 let password = '';
 
 function generate() {
+    let passLenth=Passwordlength.value;
+    if(passLenth>20){
+        passLenth=20;
+    }
     newData();
-    console.log(newArr);
-    for (let i = 0; i < Passwordlength.value; i++) {
+    for (let i = 0; i < passLenth; i++) {
         let random = Math.floor(Math.random() * newArr.length);
         password += eval(`getRandom${newArr[random]}()`);
     };
     result.value = password;
     password = '';
-    while(newArr.length>0){
+    while (newArr.length > 0) {
         newArr.pop();
     }
 }
@@ -62,6 +65,5 @@ function generate() {
 function copy() {
     const value = result.value;
     navigator.clipboard.writeText(value);
-
     value == '' ? alert('Please generate password') : alert('Password copied to clipboard');
 }
